@@ -1,0 +1,20 @@
+from dotenv import load_dotenv
+from pathlib import Path
+import os
+
+
+BASE_DIR = Path(__file__).resolve().parent.parent
+
+load_dotenv(BASE_DIR / ".env")
+
+
+class Settings:
+
+    MOODLE_URL = os.getenv("MOODLE_URL")
+    MOODLE_TOKEN = os.getenv("MOODLE_TOKEN")
+
+    VK_TOKEN = os.getenv("VK_TOKEN")
+    VK_GROUP_ID = os.getenv("VK_GROUP_ID")
+
+
+settings = Settings()

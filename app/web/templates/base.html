@@ -1,0 +1,29 @@
+<html>
+<head>
+    <title>MoodleNotify Admin</title>
+    <style>
+        body { font-family: Arial; margin: 20px; }
+        .header { background: #1e3c72; color: white; padding: 10px; }
+        .nav { background: #2a5298; padding: 10px; }
+        .nav a { color: white; margin-right: 15px; }
+        .stat-card { background: #eee; padding: 15px; margin: 10px; display: inline-block; }
+        table { border-collapse: collapse; width: 100%; }
+        th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+        th { background: #1e3c72; color: white; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>MoodleNotify Admin</h1>
+    </div>
+    <div class="nav">
+        <a href="/admin/dashboard">Dashboard</a>
+        <a href="/admin/logs">Logs</a>
+        <a href="/admin/settings">Settings</a>
+        <a href="/admin/manual">Manual Send</a>
+    </div>
+    <div>
+        {% block content %}{% endblock %}
+    </div>
+</body>
+</html>

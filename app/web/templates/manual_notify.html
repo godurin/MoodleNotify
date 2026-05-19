@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>📨 Ручная отправка уведомления</h2>
+
+<form method="post">
+    <div style="margin-bottom:15px">
+        <label>Выберите пользователя:</label><br>
+        <select name="vk_user_id" style="padding:5px;width:300px">
+            {% for user in users %}
+            <option value="{{ user.vk_user_id }}">{{ user.moodle_username }} ({{ user.moodle_fullname }}) - VK: {{ user.vk_user_id }}</option>
+            {% endfor %}
+        </select>
+    </div>
+    
+    <div style="margin-bottom:15px">
+        <label>Текст сообщения:</label><br>
+        <textarea name="message" rows="5" style="padding:5px;width:100%;max-width:500px" placeholder="Введите текст уведомления..."></textarea>
+    </div>
+    
+    <button type="submit" class="btn">📤 Отправить</button>
+</form>
+
+{% if sent %}
+<div style="margin-top:20px;padding:10px;background:#d4edda;color:#155724;border-radius:5px">
+    ✅ Уведомление отправлено!
+</div>
+{% endif %}
+{% endblock %}

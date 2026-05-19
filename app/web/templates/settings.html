@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>⚙️ Настройки системы</h2>
+
+<form method="post">
+    <div style="margin-bottom:15px">
+        <label>Порог высокого риска (0-10):</label><br>
+        <input type="number" step="0.1" name="high_threshold" value="{{ high_threshold }}" style="padding:5px;width:200px">
+        <small>Ниже этого балла — студент в группе высокого риска</small>
+    </div>
+    
+    <div style="margin-bottom:15px">
+        <label>Порог среднего риска (0-10):</label><br>
+        <input type="number" step="0.1" name="medium_threshold" value="{{ medium_threshold }}" style="padding:5px;width:200px">
+        <small>Ниже этого балла — студент в группе среднего риска</small>
+    </div>
+    
+    <div style="margin-bottom:15px">
+        <label>Интервал проверки (минуты):</label><br>
+        <input type="number" name="check_interval" value="{{ check_interval }}" style="padding:5px;width:200px">
+    </div>
+    
+    <button type="submit" class="btn">💾 Сохранить</button>
+</form>
+
+{% if saved %}
+<div style="margin-top:20px;padding:10px;background:#d4edda;color:#155724;border-radius:5px">
+    ✅ Настройки сохранены!
+</div>
+{% endif %}
+{% endblock %}

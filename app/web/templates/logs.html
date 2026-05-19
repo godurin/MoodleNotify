@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>📝 Все уведомления</h2>
+<table>
+    <tr><th>ID</th><th>VK ID</th><th>Пользователь</th><th>Риск</th><th>Средний балл</th><th>Время</th><th>Статус</th></tr>
+    {% for log in logs %}
+    <tr>
+        <td>{{ log.id }}</td>
+        <td>{{ log.vk_user_id }}</td>
+        <td>{{ log.username }}</td>
+        <td>{{ log.risk_level or '-' }}</td>
+        <td>{{ log.avg_grade or '-' }}</td>
+        <td>{{ log.sent_at.strftime('%Y-%m-%d %H:%M:%S') if log.sent_at else '-' }}</td>
+        <td class="{% if log.success %}success{% else %}error{% endif %}">{% if log.success %}✅{% else %}❌{% endif %}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}

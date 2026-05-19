@@ -1,0 +1,36 @@
+{
+  "4": [
+    {
+      "course_name": "Программирование ",
+      "item_name": "тест",
+      "grade": 31
+    },
+    {
+      "course_name": "Программирование ",
+      "item_name": "ке",
+      "grade": 2
+    }
+  ],
+  "3": [
+    {
+      "course_name": "Программирование ",
+      "item_name": "тест",
+      "grade": 34
+    },
+    {
+      "course_name": "Программирование ",
+      "item_name": "ке",
+      "grade": 1
+    },
+    {
+      "course_name": "Математика",
+      "item_name": "12",
+      "grade": 5
+    },
+    {
+      "course_name": "Математика",
+      "item_name": "3",
+      "grade": 23
+    }
+  ]
+}
